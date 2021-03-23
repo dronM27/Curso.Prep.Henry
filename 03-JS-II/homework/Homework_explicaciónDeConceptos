@@ -1,0 +1,44 @@
+// Los Operadores Lógicos nos permiten  combinar dos valores manifestados para expresar si la máquina debe tomar todos esos valores, uno de ellos o lo contrario a lo que
+// se expresa.
+// Algunos Operadores Lógicos son:
+&&: significa "and, (y)" y se usa para tomar todos los valores dados combinarlos, debiendo ser todos de igual valor. Por ejemplo:
+
+if (100 > 77 && 100 > 90) {console.log '100 es mayor'};
+else {return false};
+
+// Lo que hicimos en la peración anterior fué combinar los dos criterios (100 > 77 && 100 > 90) de forma tal que si ambos se cumplen se ejecutará el código '100 es mayor'.
+// Ahora, si alguno de los dos criterios es falso el código no se ejecutará y devolverá false. Por ejemplo:
+
+if (20 > 4 && 20 === 32)
+
+||: este operador lógico significa "or (o)" y se usa para expresar algo así como "este valor o aquel". Por ejemplo:
+
+if (10 > 15 || 30 < 50) {console.log 'Una de las dos expresiones es true};
+else {return false};
+
+//En este caso, el código se ejecutará porque uno de los dos valores expresados fué true. Si ninguno fuera true, el cógido directamente no se ejecutaría, devolviendo false.
+
+!: significa "not (no)" y determina que se trata de lo contrario a lo que se expresó. Por ejemplo:
+
+if (10 !== 5) {console.log 'Diez NO es igual a 5}
+else {return false}
+
+// Este código se ejecutará porque 10 NO es igual a 5. Si vemos otro ejemplo mas complicado:
+
+if (! (10 === 10) ) {console.log 'asfead' ;}    
+
+//10 es igual a 10, entonces esa operación es verdadera, pero al agregarle el "!", hace que el operador devuelva lo contrario de eso.
+
+BUCLE FOR: los bucles tienen una estructura similar a las funciones [la palabra for, abro y cierro paréntesis, espacio, abro y cierro corchetes) y sirven para evaluar 
+// expresiones hasta que encuentra la que buscábamos o se corta en un cierto tiempo. 
+// (También existen lo que se llaman "bucles infinitos" pero no son recomendables ;).
+// Dentro de los paréntesis debemos tener en cuenta 3 partes, separadas cada una por punto y coma ";".
+// La primera determinará cuál será el valor inicial de la variable; en la segunda determinaremos la expresión condicional o , en otras palabras, diremos hasta cuándo 
+// queremos que el bucle se ejecute, y esto será cuando esa expresión  condicional sea false; en la tercera parte indicamos cómo queremos que se incremente el valor
+// de la variable.
+//Ejemplo de bucle for:
+
+for ( var i = 0; i < 50; i++) {console.log (i) };
+
+//En este ejemplo, se determinó que la variable "i" comience su valor en 0 y siga hasta que su valor sea menor a 50, aumentando un número por vez (i++).
+// Así, el bucle se ejecutará una y otra vez imprimiendo cada número {console.log (i) } y finalizará al llegar al número 49.

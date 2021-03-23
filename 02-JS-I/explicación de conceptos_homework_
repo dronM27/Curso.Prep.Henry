@@ -1,0 +1,50 @@
+Variables: 
+// son formas en las que pueden guardarse el valor de una determinada cosa para volver a usarla luego. Distintos tipos de variables son:
+var= los valores de las cosas se van pisando, es decir que, por ejemplo, si establezco var M = 1 y luego establezco que var M = 2; el controlador dejará el último valor M.
+const:= los valores que se agregan quedarán constantes y no se cambiarán aunque se intente mas tarde.
+
+strings: 
+// son un tipo de dato que consiste básicamente en bloques de carácteres. Puede incluir cualquier cosa. Se colocan entre comillas simples ' ' o dobles " ".
+Otro tipo de caracteres son números y boolean que no se colocan entre comillas y tienen otras significaciones. Los números son números y los boolean solo indican true o false.
+
+Funciones: 
+// sirven para crear y agrupar códigos con variables, al darle enter se guardan y pueden volver a usarse más tarde invocando cada función por su nombre. Así por ejemplo,
+si hay una función creada con el nombre despedida, luego cuando escribamos despedida el sistema asimilará que se trata de una función.
+// El esqueleto de una función es:
+
+function //nombre de función// ( ) { }. 
+
+// Entre los paréntesis irán los argumentos y entre los corchetes el código a ejecutar. Por ejemplo:
+
+function despedida ( cómo, quiénes) { 
+console.log ('Sin mas que decir ' + cómo); 
+console.log ('con agrado ' + quiénes); 
+}
+// De esta forma queda undefined la función. Si ahora la invocamos pondríamos, por ejemplo:
+despedida ('me despido', 'hasta luego') y le damos enter
+// esto nos tiraría algo así como 
+Sin mas que decir me despido
+con agrado hasta luego
+
+// En este caso es necesario aclarar que control.log ( ) hace que la máquina grabe o "saca una foto" a lo que nosotros pongamos entre los paréntesis. 
+// Otra FUNCIÓN importante es return. Esto nos devuelve una respuesta que no está dicha en el código escrito.
+// Por ejemplo si queremos crear una función de suma:              
+function suma (a, b) {
+return a + b; }
+// invocamos suma (10, 15)
+// nos tira como resultado
+25
+
+Declaraciones: 
+// tienen que ver con las situaciones que requieren lógica matemática para resolver situaciones.
+// Tiene el mismo esqueleto que una función solo que se agrega if. Por ejemplo:
+
+function puedeManejar (edad) {                         
+if (edad >= 18) {return true;}
+else {return false;}
+}
+// Esto se leería de la siguiente manera: si tiene más o igual edad que 18, return true; sino return false.
+
+
+Valores Booleanos:
+// Son valores que solo indican true o false.
