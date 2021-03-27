@@ -1,0 +1,80 @@
+// En JavaScript existen los "arrays" que son como una especie de cartuchera, donde pueden incorporarse N cantidad de elementos y acceder a ellos mediante un índice.
+// Existen dos formas de crear un array. 
+// 1) es crear un array vacío:
+
+var array = []
+
+// 2) la segunda forma es crear un array que ya tenga elementos incorporados dentro suyo. Cada elemento debe estar separado por comas (,) e ir entre comillas si es un string.
+
+var arrayConElementos = [2, 'Hola', 589, true, function () {console.log 'Que tal'}]
+
+// Para acceder a un array simplemente lo invocamos con el nombre:
+
+arrayConElementos
+
+// Estos elementos pueden ser de cualquier tipo de datos (string, números, booleanos, funciones, arrays, ...) y a cada uno le corresponde un número de índice, 
+// dependiendo el lugar que ocupe dentro del array. El índice comienza en el número 0.
+// Si nosotros queremos invocar un elemento específico de un array, debemos invocar el array + el número del índice del elemento. Por ejemplo:
+
+var numerosRomanos = ['I', 'V', 'X', 'XX', 'L', 'C')
+           (ÍNDICE)    0    1    2    3     4    5
+
+// Queremos invocar 'XX':
+ numerosRomanos[3]
+ 
+// Puede pasar que no sepamos en qué lugar está el elemento que queremos citar, entonces usamos el método .length. Con él sabremos primeramente cuál es la cantidad de elementos
+// dentro del array. Ejemplo: 
+
+numerosRomanos.length
+// nos devolvería 6. Hay que destacar que el número que .length nos devuelva será mayor al número de índice del array. Esto es porque el índice comienza en 0 y length cuenta la 
+// cantidad de elementos, empezando por 1. Es decir, índice 0 = elemento 1.
+
+// El array también puede recorrerse mediante un bucle for. Tomando como ejemplo el array anterior esto sería:
+
+for (var i = 0; i < numerosRomanos.length; i++) {
+   console.log (numerosRomanos[i]); 
+  }
+  
+// Mediante este bucle, estamos pidiendo a la consola que recorra la variable (i) aumentandola de valor (1 por vez) a lo largo del array (.length) y nos devuelva 
+los resultados.
+// También podemos hacer una búsqueda de un elemento específico, es decir, fijarnos si se encuentra dentro del array. Para ello, primero recorreremos el array con el bucle for
+// y luego, en vez de imprimir los resultados, incorporaremos un control de flujo para comparar nuestra búsqueda con los resultados. Si se encuentra haremos que la consola lo 
+// imprima, sino especificaremos que 'El resultado no se encontró'. Por ejemplo:
+
+for var (i = 0; i < numerosRomanos.length; i++) {
+  if (numerosRomanos[i] === 'D') {return numerosRomanos[i];
+    }
+      else return 'El resultado no se encontró';
+  }
+
+// En los dos ejemplo, especificamos que la variable (i) hace referencia al índice del array y, mediante el bucle for hicimos que la consola la recorra devolviendo resultados.
+// Existen también otros métodos incorporados a un array, como por ejemplo:
+
+numerosRomanos.push('D') = incorpora el elemento especificado entre paréntesis al final de array y devuelve el nuevo length del array.
+numerosRomanos.unshift('D') = incorpora el elemendo (D) al principio del array.
+numerosRomanos.pop = devuelve y elimina del array el último elemento. Se debe destacar que si no queremos perderlo para siempre, conviene crear antes una var que contenga el 
+valor del elemento a "poppear".
+numerosRomanos.shift = devuelve y elimina el primer elemento de un array.
+numerosRomanos.join() = devuelve los elementos como un string separado por el parámetro que le pasemos.
+numerosRomanos.indexOf() = devuelve la posición del parámetro que le pasemos.
+
+// Existen también los llamados mariz. Esto es un array bimensional. ¿Qué significa??
+// Una matriz tiene dos tipos de valores (filas y columnas), por lo que también tendrá dos índices (a, b). 
+// Sería algo así:
+
+INDICE  0   1   2   3   4   5
+     0 'A' 'B' 'C' 'D' 'E' 'F'                    
+     1 'G' 'H' 'I' 'J' 'K' 'L'
+     2 'M' 'N' 'O' 'P' 'Q' 'R'
+     3 'S' 'T' 'U' 'V' 'W' 'X'
+     
+// COMO SE PUEDE VER, ESTA MATRIZ CUENTA CON 6 COLUMNAS Y 4 FILAS.
+//Si por ejemplo tenemos
+matriz (a, b)
+// donde a: hace referencia a las filas y 
+// b: a las columnas:
+// Para encontrar la letra 'J' deberíamos buscar en matriz (1, 3)
+
+
+
+
