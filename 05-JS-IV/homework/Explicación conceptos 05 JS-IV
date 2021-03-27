@@ -1,4 +1,5 @@
-OBJETOS: es algo muy parecido a los arrays, solo que los objetos tienen PROPIEDADES, cada una con un nombre único y que pueden tener muchos VALORES.
+OBJETOS: es algo muy parecido a los arrays, solo que los objetos tienen PROPIEDADES, cada una con un nombre único y que pueden tener muchos VALORES. A esto se denomina
+// Par clave:valor 
 // Cada propiedad tiene una clave (o nombre) a la cual se le asigna un valor de cualquier tipo (fucnión, string, array, otro objeto, booleano, número).
 // Las propiedades deben tener una clave única, aunque un valor puede repetirse en dos o más claves.
 // Los objetos se conforman de la siguiente manera:
@@ -9,10 +10,11 @@ var nuevoObjeto = {};
 
 var Mauri = {nombre: Mauri, edad: 26, domicilio: Av. Siempreviva}
 
-// También puede incorporarse una propiedad y un valor a un objeto ya creado:
+// También puede incorporarse una propiedad y un valor a un objeto ya creado. En este caso, ya no se habla de una función dentro del objeto, sino de un método, es decir, 
+// Todas las funciones que se encuentren dentro de un objeto reciben el nombre ded MÉTODO.
 
 Mauri['saludar'] = function() {console.log('Hola, Mauri');
-// En este caso, como la propiedad se trata de una función, debemos invocarla seguida de paréntesis (). Ejemplo:
+// En este caso, como la propiedad se trata de un método, debemos invocarla seguida de paréntesis (). Ejemplo:
 
 Mauri['saludar']()
 
@@ -41,7 +43,7 @@ var Mauri = {nombre: Mauri, edad: 26, domicilio: Av. Siempreviva, saludar: funct
                      console.log(domicilio);
                      }
                      
-// De esta forma buscamos dentro del objeto si la clave domicilio tiene o no un valor.
+// De esta forma buscamos dentro del objeto si la clave domicilio tiene o no un valor y escribimos console.log para que se imprima el resultado.
 
 
 
