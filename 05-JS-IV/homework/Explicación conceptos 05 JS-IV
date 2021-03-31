@@ -1,0 +1,49 @@
+OBJETOS: es algo muy parecido a los arrays, solo que los objetos tienen PROPIEDADES, cada una con un nombre único y que pueden tener muchos VALORES. A esto se denomina
+// Par clave:valor 
+// Cada propiedad tiene una clave (o nombre) a la cual se le asigna un valor de cualquier tipo (fucnión, string, array, otro objeto, booleano, número).
+// Las propiedades deben tener una clave única, aunque un valor puede repetirse en dos o más claves.
+// Los objetos se conforman de la siguiente manera:
+
+var nuevoObjeto = {};
+
+// Cada propiedad está separada una con otra mediante comas "," y su valor se establece mediante dos puntos ":". Un ejemplo:
+
+var Mauri = {nombre: Mauri, edad: 26, domicilio: Av. Siempreviva}
+
+// También puede incorporarse una propiedad y un valor a un objeto ya creado. En este caso, ya no se habla de una función dentro del objeto, sino de un método, es decir, 
+// Todas las funciones que se encuentren dentro de un objeto reciben el nombre ded MÉTODO.
+
+Mauri['saludar'] = function() {console.log('Hola, Mauri');
+// En este caso, como la propiedad se trata de un método, debemos invocarla seguida de paréntesis (). Ejemplo:
+
+Mauri['saludar']()
+
+// Se puede invocar una propiedad de dos maneras:
+1) CON CORCHETES: Mauri['edad']
+// De esta manera, el nombre de la propiedad debe estar entre comillas.
+2) CON PUNTO: Mauri.domicilio
+// El punto indica la propiedad del objeto a la cual queremos referirnos.
+
+// Existen métodos para hacer la tarea más sencilla y menos repetitiva cuando queremos invocar un objeto cuyo valor de propiedad puede variar. Es decir, ¿Qué pasa si nosotros
+// queremos invocar el nombre del objeto por ejemplo? 
+// Esta clave tiene un valor que puede variar y si tenemos que invocarla, deberíamos cambiar el nombre en la función cada vez que el valor de la propiedad [nombre]
+// lo haga. Esta acción genera un margen de error alto porque puede pasar que cambiemos el valor de la clave pero nos olvidemos de cambiarla en la función.
+// Para ello se utiliza una keyword (palabra clave) llamada >> this <<. Lo que hace esta keyword es referenciar a la propiedad y al propio objeto que la está usando. Por ejemplo:
+
+var Mauri = {nombre: Mauri, edad: 26, domicilio: Av. Siempreviva, saludar: function() {'Hola' + this.nombre}
+
+// Con la keyword << this >> estamos diciendo que haga referencia a la clave << nombre >> del objeto, así en caso que su nombre cambie también lo hace automáticamente la función, 
+// puesto que se estaría invocando su valor.
+
+// En los objetos ocurre también que si queremos buscar una clave no podemos hacer uso al bucle for de la misma forma que con los arrays, aunque funciona de manera parecida.
+// JS incorpora una nueva forma de bucle llamado << for...in>> y funciona de la siguiente manera:
+
+var Mauri = {nombre: Mauri, edad: 26, domicilio: Av. Siempreviva, saludar: function() {'Hola' + this.nombre}
+                   for (var domicilio in Mauri) {
+                     console.log(domicilio);
+                     }
+                     
+// De esta forma buscamos dentro del objeto si la clave domicilio tiene o no un valor y escribimos console.log para que se imprima el resultado.
+
+
+
