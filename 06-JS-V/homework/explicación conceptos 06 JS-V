@@ -1,0 +1,58 @@
+                          ¿Para qué sirve crear una clase?
+// Una clase engloba cantidades de objetos que comparten características entre sí. Creando clases evitamos repetir acciones y creaciones de funciones y strings que
+// puedan resultar luego en errores por diferencias en el tipeo o en el orden, entre otras.
+// Así, si por ejemplo queremos expresar distintas razas de perros:
+
+var perro = {raza: 'ovejero', color: 'marron y negro', tamaño: 'grande', utilidad: 'rastreador');
+var perro2 = {raza: 'dalmata', color: 'blanco y negro', tamaño: 'grande', utilidad: 'compañía');
+var perro1 = {raza: 'caniche', color: 'blanco', tamaño: 'muy pequeño', utilidad: 'ninguna');
+
+// cada objeto <perro> tiene propiedades idénticas con valores que pueden diferir entre sí. Si tenemos que hacer muchas mas razas de perros, podemos confundirnos en el tipeo,
+// olvidarnos alguna propiedad, repetir valores, repetir razas, etc. lo que provocaría un error o el pisado de datos.
+// En este caso y como todos los objetos comparten la misma propiedad madre <perro>, sería mas provechoso, cómodo, fácil y liviano si los englobáramos dentro de una misma
+// burbuja. Esta burbuja sería la clase.
+
+// Para crear una clase (class), primero debemos crear una Función Constructora. Esta función se crea como cualquier otra, con la excepción que su nombre estará en Mayúsculas.
+// Ejemplo :
+function Perros() {}
+
+// Dentro de los paréntesis, podemos definir parámetros para tomar luego con la keyword <this>:
+
+function Perros (raza, color, tamaño, origen, utilidad) {
+      this.raza = raza;
+      this.color = color;
+      this.origen = origen;
+      this.utilidad = utilidad || comañía;
+}
+// De esa forma, cada keyword <this> tomará el valor de los parámetros que hayamos fijado en los paréntesis de la función constructora, en este caso, Perros.
+// La función constructora se trata de una función normal, por lo tanto, podemos poner lo que nosostros queramos dentro de las llaves de ejecución. 
+// Podemos agregar otras funciones por ejemplo.
+// Bien, ya creamos la función constructora <Perros>, ahora debemos crear los objetos que entrarán en esa clase. Los creamos como cualquier otro objeto y agregamos
+// un concepto nuevo, la palara <new> que hará referencia a la función constructora de la que serán parte.
+
+var ovejero = new Perros ('ovejero', 'marron y negro', 'grande', 'Alemania');
+
+// Resaltemos que en este objeto llamado <ovejero>, puse valores para los parámetros raza, color, tamaño y origen pero no puse valores para el parámetro utilidad.
+//Si nosotros ejecutamos dicho objeto, retornará lo siguiente:
+
+Perros {raza: 'ovejero', color: 'marron y negro', tamaño: 'grande', origen: 'Alemania', utilidad: 'compañía'}
+
+// Primero, nos muestra que forma parte de una clase llamada <Perros>, luego vemos las propiedades y en la propiedad utilidad, como cuando creamos
+// el objeto no pusimos ningún valor, nos largó el valor que pusimos en la función constructora luego del || (o), puesto que con este operador lógico 
+// establecimos un resultado predefinido en caso que no se recibiera un valor para dicho argumento.
+// Con la keyword <new>, definimos que la función <Perros> será prototipo del objeto <ovejero>, así, este objeto tendrá ya definido los argumentos y funciones
+// que tenga incorporado <Perros>. 
+// Dijimos que a la función también pueden agregarse métodos. Esto sería así:
+
+Perros.prototype.presentacion = function() {
+    return this.name + ' tiene su origen en ' + this.origen + '.';
+ }
+ 
+ // De esta forma, la función <presentación> queda definida como prototipo de la clase <Perros>. Por lo tanto, estará también definida para todos los
+ // objetos que estén instanciados en esta clase.
+ // Si nosotros ahora invocamos:
+ 
+ ovejero.presentación => ovejero tiene su origen en Alemania.
+ 
+ // También podemos agregarle un prototipo solo a este objeto, que funcionará de la misma manera.
+ 
