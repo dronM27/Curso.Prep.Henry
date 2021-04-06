@@ -1,0 +1,38 @@
+// Las funciones callback son funciones creadas como cualquier otra y que luego son llamadas como argumentos de otras funciones. 
+// Por ejemplo: 
+
+function saludar(usuario) {
+  return 'Hola ' + usuario;
+}
+
+function crearSaludo(usuario, saludar) {
+  return saludar(usuario);
+}
+
+//invocamos función:
+
+crearSaludo('Mauri,saludar);   // Nos devuelve 'Hola Mauri'
+
+// Como se observa en la función anterior, se invoca la función <saludar> como parámetro de la función <crearSaludo>, es decir, la función crearSaludo ejecuta la función callback con el 
+// parámetro que tenga. En este caso, la función callback retorna su resultado con el parámetro 'Mauri'.
+
+// Las funciones callback son muy útiles cuando se trabaja con arrays, puesto que ahorran líneas y facilitan procesos. 
+// Los arrays tienen un método llamado <.map()> que crea un nuevo array con los resultados del callback, aplicados a cada uno de sus elementos:
+
+var numeros = [2, 14, 6, 86];
+var mitadNumeros = numeros.map(function(x) {         //Nos da como resultado [1, 7, 3, 43]. 
+return x / 2;                                   
+})
+
+//Otro método de array es .filter() que crea una matriz con todos los elementos que pasan la prueba. Poe ejemplo si tenemos:
+
+function puedeOnoConducir(edad) {
+  if edad >= 18 {
+   return 'Puede conducir';
+  } else return 'No puede conducir';
+}
+
+var arrayAge = [30, 17, 42, 23, 10, 18]     //Tenemos un array con estas edades.
+
+var mayores = arrayAge.filter(puedeOnoConducir)     // No cambia el array original y devuelve el resultado de todas las edades que cumplen la función primera <puedeOnoConducir>, en
+                                                    // este caso devolverá [30, 42, 23, 18].
